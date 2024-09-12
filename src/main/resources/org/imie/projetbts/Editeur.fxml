@@ -6,7 +6,7 @@
 
 <VBox alignment="CENTER" prefHeight="264.0" prefWidth="392.0" style="-fx-background-color: #319B8F;" stylesheets="@MyBootstrap.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.imie.projetbts.EditeurController">
    <children>
-      <TableView prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="tablPublisher" prefHeight="200.0" prefWidth="200.0">
         <columns>
           <TableColumn fx:id="colIdEditeur" prefWidth="75.0" text="id" />
           <TableColumn fx:id="colNomEditeur" prefWidth="75.0" text="nom" />

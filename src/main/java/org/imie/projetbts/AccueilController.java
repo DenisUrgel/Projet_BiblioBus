@@ -3,20 +3,21 @@ package org.imie.projetbts;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
+import org.imie.projetbts.Model.Book;
+import org.imie.projetbts.Model.ManageBook;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class AccueilController {
-    public TableColumn colId;
-    public TableColumn colTitre;
-    public TableColumn colAuteur;
-    public TableColumn colCollection;
-    public TableColumn colCouverture;
+    public TableView<Book> tablLivre;
+    public TableColumn<Book, Integer> colId;
+    public TableColumn<Book, String> colTitre;
+    public TableColumn<Book, Integer> colAuteur;
+    public TableColumn<Book, String> colCollection;
+    public TableColumn<Book, String> colCouverture;
 
     public TextField txtTitre;
     public TextField txtCouverture;
@@ -29,7 +30,20 @@ public class AccueilController {
     public Button btnAddBook;
 
     public TextField chercherTitre;
-    public Button voirLivreEmprunt;
+
+    public void initialize() throws SQLException {
+        ManageBook manageBook = new ManageBook();
+        try {
+            colId.setCellValueFactory(cellData -> cellData.getValue().Book_idProperty().asObject());
+            colTitre.setCellValueFactory(cellData -> cellData.getValue().titleProperty());
+            colAuteur.setCellValueFactory(cellData -> cellData.getValue().getAuthor_id().asObject());
+            colCollection.setCellValueFactory(cellData -> cellData.getValue().getCollectionName());
+            colCouverture.setCellValueFactory(cellData -> cellData.getValue().getImage());
+            tablLivre.setItems(manageBook.getBookList());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public void onAddBook(ActionEvent actionEvent) {
         String titre = txtTitre.getText();

@@ -3,27 +3,37 @@ package org.imie.projetbts.Model;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
-public class Auteur {
-    public SimpleIntegerProperty auteur_id;
+public class Collection {
+    public SimpleIntegerProperty collection_id;
+    public SimpleIntegerProperty publicher_id;
     public SimpleStringProperty name;
     public String createdAt;
     public String updatedAt;
 
-    public Auteur(int id, String name) {
-        this.auteur_id = new SimpleIntegerProperty(id);
+    public Collection(int id, String name, int publicher_id) {
+        this.collection_id = new SimpleIntegerProperty(id);
         this.name = new SimpleStringProperty(name);
+        this.publicher_id = new SimpleIntegerProperty(publicher_id);
     }
 
-    public int getAuteur_id() {
-        return auteur_id.get();
+    public SimpleIntegerProperty getCollection_id() {
+        return collection_id;
     }
 
-    public SimpleIntegerProperty auteur_idProperty() {
-        return auteur_id;
+    public SimpleIntegerProperty collection_idProperty() {
+        return collection_id;
     }
 
-    public void setAuteur_id(int auteur_id) {
-        this.auteur_id.set(auteur_id);
+    public void setCollection_id(int collection_id) {
+        this.collection_id.set(collection_id);
+    }
+
+    public SimpleIntegerProperty getPublicher_id() {
+        return publicher_id;
+    }
+
+    public void setPublicher_id(int publicher_id) {
+        this.publicher_id.set(publicher_id);
     }
 
     public String getName() {
