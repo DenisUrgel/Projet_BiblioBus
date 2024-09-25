@@ -30,12 +30,7 @@
             <VBox>
                <children>
                   <Label text="Editeur" />
-                  <MenuButton mnemonicParsing="false" text="Editeur 1">
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="Editeur 1" />
-                      <MenuItem mnemonicParsing="false" text="Editeur 2" />
-                    </items>
-                  </MenuButton>
+                  <ChoiceBox fx:id="menuEditeur" prefHeight="23.0" prefWidth="89.0" />
                </children>
                <padding>
                   <Insets left="10.0" />

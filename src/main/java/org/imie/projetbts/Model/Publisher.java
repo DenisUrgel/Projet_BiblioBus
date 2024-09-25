@@ -9,8 +9,8 @@ public class Publisher {
     public String createdAt;
     public String updatedAt;
 
-    public Publisher(int id, String name) {
-        this.publisher_id = new SimpleIntegerProperty(id);
+    public Publisher( String name) {
+        this.publisher_id = new SimpleIntegerProperty();
         this.name = new SimpleStringProperty(name);
     }
 

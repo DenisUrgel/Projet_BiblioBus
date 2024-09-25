@@ -16,6 +16,7 @@ public class EditeurController {
     public TableColumn<Publisher, String> colNomEditeur;
     public TextField txtNomEditeur;
     public Button btnAddEditeur;
+    public Button btnDelEditeur;
 
     public void initialize() throws SQLException {
         managePublisher managePublisher = new managePublisher();
@@ -25,5 +26,13 @@ public class EditeurController {
     }
 
     public void onAddEditeur(ActionEvent actionEvent) {
+        Publisher publisher = new Publisher(txtNomEditeur.getText());
+        managePublisher mng = new managePublisher();
+        mng.createPublisher(publisher);
+    }
+
+    public void onDelEditeur(ActionEvent actionEvent) {
+        managePublisher mng = new managePublisher();
+        mng.deletePublisher(txtNomEditeur.getText());
     }
 }
