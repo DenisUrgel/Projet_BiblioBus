@@ -19,7 +19,7 @@ public class LoginController {
         if (passwordTxt.getText()== "" && idTxt.getText() == ""){
             Stage stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(BiblioBusApplication.class.getResource("Accueil.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 855, 497);
+            Scene scene = new Scene(fxmlLoader.load(), 1000, 600);
             stage.setTitle("Accueil");
             stage.setScene(scene);
             stage.show();

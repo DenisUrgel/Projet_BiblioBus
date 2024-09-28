@@ -4,9 +4,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" prefHeight="264.0" prefWidth="392.0" style="-fx-background-color: #319B8F;" stylesheets="@MyBootstrap.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.imie.projetbts.EditeurController">
+<VBox alignment="CENTER" prefHeight="265.0" prefWidth="487.0" style="-fx-background-color: #319B8F;" stylesheets="@MyBootstrap.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.imie.projetbts.EditeurController">
    <children>
-      <TableView prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="tablPublisher" onMousePressed="#onEditeurPressed" prefHeight="200.0" prefWidth="200.0">
         <columns>
           <TableColumn fx:id="colIdEditeur" prefWidth="75.0" text="id" />
           <TableColumn fx:id="colNomEditeur" prefWidth="75.0" text="nom" />
@@ -23,16 +23,24 @@
             <VBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="112.0">
                <children>
                   <Label text="Nom" />
-                  <TextField fx:id="txtNomEditeur" />
+                  <TextField fx:id="txtNomEditeur" onAction="#onEditeurNameChanged" />
                </children>
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
             </VBox>
-            <Button fx:id="btnAddEditeur" mnemonicParsing="false" onAction="#onAddEditeur" style="-fx-background-color: #0047FF; -fx-border-color: #0047FF;" styleClass="btn-danger" text="Ajouter éditeur">
-               <HBox.margin>
-                  <Insets left="10.0" top="10.0" />
-               </HBox.margin></Button>
+            <VBox alignment="CENTER" prefHeight="60.0" prefWidth="135.0">
+               <children>
+                  <Button fx:id="btnDelEditeur" mnemonicParsing="false" onAction="#onDelEditeur" style="-fx-background-color: #0047FF; -fx-border-color: #0047FF;" styleClass="btn-danger" text="Supprimer éditeur">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin></Button>
+                  <Button fx:id="btnAddEditeur" mnemonicParsing="false" onAction="#onAddEditeur" style="-fx-background-color: #0047FF; -fx-border-color: #0047FF;" styleClass="btn-danger" text="Ajouter éditeur">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin></Button>
+               </children>
+            </VBox>
          </children>
          <VBox.margin>
             <Insets bottom="10.0" />

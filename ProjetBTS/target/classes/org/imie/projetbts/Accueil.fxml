@@ -6,12 +6,12 @@
 
 <BorderPane prefHeight="497.0" prefWidth="855.0" style="-fx-background-color: #319B8F;" stylesheets="@MyBootstrap.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.imie.projetbts.AccueilController">
    <center>
-      <TableView prefHeight="318.0" prefWidth="538.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="tablLivre" editable="true" onMousePressed="#onBookPressed" prefHeight="318.0" prefWidth="538.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn fx:id="colId" prefWidth="75.0" text="Id" />
-          <TableColumn fx:id="colTitre" prefWidth="75.0" text="Titre" />
-            <TableColumn fx:id="colAuteur" prefWidth="75.0" text="Auteur" />
-            <TableColumn fx:id="colCollection" prefWidth="75.0" text="Collection" />
+          <TableColumn fx:id="colId" maxWidth="1000.0" prefWidth="75.0" text="Id" />
+          <TableColumn fx:id="colTitre" maxWidth="3000.0" prefWidth="75.0" text="Titre" />
+            <TableColumn fx:id="colAuteur" maxWidth="3000.0" prefWidth="75.0" text="Auteur" />
+            <TableColumn fx:id="colCollection" maxWidth="3000.0" prefWidth="75.0" text="Collection" />
             <TableColumn fx:id="colCouverture" prefWidth="75.0" text="Couverture" />
         </columns>
          <columnResizePolicy>
@@ -32,7 +32,7 @@
                         <Insets top="10.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField fx:id="chercherTitre" onAction="#onSearchBook">
+                  <TextField fx:id="searchTitle" onAction="#onSearchBook">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
@@ -50,7 +50,7 @@
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </TextField>
-                  <Label text="Couverture" />
+                  <Label text="Nom de l'image" />
                   <TextField fx:id="txtCouverture">
                      <VBox.margin>
                         <Insets bottom="10.0" />
@@ -64,33 +64,28 @@
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
                   <Label text="Auteur" />
-                  <ChoiceBox fx:id="choixAuteur" prefWidth="150.0">
-                     <VBox.margin>
-                        <Insets bottom="10.0" />
-                     </VBox.margin>
-                  </ChoiceBox>
-                  <Label text="Collection" />
-                  <ChoiceBox fx:id="choixCollection" prefWidth="150.0">
-                     <VBox.margin>
-                        <Insets bottom="10.0" />
-                     </VBox.margin>
-                  </ChoiceBox>
+                  <ChoiceBox fx:id="choixAuteur" prefWidth="150.0" />
+                  <Label text="Collection">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding></Label>
+                  <ChoiceBox fx:id="choixCollection" prefWidth="150.0" />
                </children>
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
             </VBox>
-            <VBox prefHeight="96.0" prefWidth="177.0">
+            <VBox alignment="CENTER" prefHeight="96.0" prefWidth="177.0">
                <children>
-                  <Button mnemonicParsing="false" style="-fx-background-color: #0047FF; -fx-border-color: #0047FF;" styleClass="btn-danger" text="livre selectionné emprunté">
-                     <VBox.margin>
-                        <Insets bottom="10.0" top="15.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Button fx:id="btnAddBook" mnemonicParsing="false" onAction="#onAddBook" style="-fx-background-color: #0047FF; -fx-border-color: #0047FF;" styleClass="btn-danger" text="Ajouter/Modifier livre">
+                  <Button fx:id="btnAddBook" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onAddBook" style="-fx-background-color: #0047FF; -fx-border-color: #0047FF;" styleClass="btn-danger" text="Ajouter livre">
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin></Button>
+                  <Button fx:id="btnDelBook" mnemonicParsing="false" onAction="#onDelBook" style="-fx-background-color: #0047FF; -fx-border-color: #0047FF;" styleClass="btn-danger" text="supprimer livre">
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
                </children>
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -114,34 +109,4 @@
          </children>
       </HBox>
    </bottom>
-   <left>
-      <VBox alignment="TOP_CENTER" prefHeight="381.0" prefWidth="185.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label text="Dates de passage">
-               <VBox.margin>
-                  <Insets bottom="5.0" />
-               </VBox.margin>
-            </Label>
-            <TableView prefHeight="211.0" prefWidth="155.0">
-              <columns>
-                <TableColumn prefWidth="75.0" text="ville" />
-                <TableColumn prefWidth="75.0" text="date" />
-              </columns>
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy>
-            </TableView>
-            <Button fx:id="voirLivreEmprunt" mnemonicParsing="false" onAction="#onVoirLivreEmprunter" style="-fx-background-color: #0047FF; -fx-border-color: #0047FF;" styleClass="btn-danger" text="Liste des livres emprunter">
-               <VBox.margin>
-                  <Insets top="70.0" />
-               </VBox.margin>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-            </Button>
-         </children>
-         <BorderPane.margin>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </BorderPane.margin></VBox>
-   </left>
 </BorderPane>

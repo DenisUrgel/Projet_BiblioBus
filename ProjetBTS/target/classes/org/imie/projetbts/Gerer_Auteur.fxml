@@ -4,9 +4,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" prefHeight="256.0" prefWidth="376.0" style="-fx-background-color: #319B8F;" stylesheets="@MyBootstrap.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.imie.projetbts.GererAuteurController">
+<VBox alignment="CENTER" prefHeight="323.0" prefWidth="380.0" style="-fx-background-color: #319B8F;" stylesheets="@MyBootstrap.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.imie.projetbts.GererAuteurController">
    <children>
-      <TableView prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="tablAuteur" onMousePressed="#onAuteurPressed" prefHeight="200.0" prefWidth="200.0">
         <columns>
           <TableColumn fx:id="colIdAuteur" prefWidth="75.0" text="id" />
           <TableColumn fx:id="colNomAuteur" prefWidth="75.0" text="nom" />
@@ -23,7 +23,7 @@
             <VBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="109.0">
                <children>
                   <Label text="Nom" />
-                  <TextField fx:id="txtNom">
+                  <TextField fx:id="txtNom" onAction="#onAuteurNameChanged">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -33,10 +33,20 @@
                   <Insets bottom="10.0" right="10.0" />
                </HBox.margin>
             </VBox>
-            <Button fx:id="btnAddAuteur" mnemonicParsing="false" onAction="#onAddAuteur" style="-fx-background-color: #0047FF; -fx-border-color: #0047FF;" styleClass="btn-danger" text="Ajouter auteur">
-               <HBox.margin>
-                  <Insets left="10.0" top="4.0" />
-               </HBox.margin></Button>
+            <VBox alignment="CENTER" prefHeight="72.0" prefWidth="139.0">
+               <children>
+                  <Button fx:id="btnAddAuteur" mnemonicParsing="false" onAction="#onAddAuteur" style="-fx-background-color: #0047FF; -fx-border-color: #0047FF;" styleClass="btn-danger" text="Ajouter auteur">
+                     <VBox.margin>
+                        <Insets bottom="6.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="btnDelAuteur" mnemonicParsing="false" onAction="#onDelAuteur" style="-fx-background-color: #0047FF; -fx-border-color: #0047FF;" styleClass="btn-danger" text="supprimer auteur">
+                     <VBox.margin>
+                        <Insets top="6.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
          </children>
       </HBox>
    </children>
