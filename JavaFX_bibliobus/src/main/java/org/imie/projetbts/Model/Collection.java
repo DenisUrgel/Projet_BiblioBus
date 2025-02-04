@@ -1,0 +1,80 @@
+package org.imie.projetbts.Model;
+
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+
+public class Collection {
+    public SimpleIntegerProperty collection_id;
+    public SimpleIntegerProperty publicher_id;
+    public SimpleStringProperty publicherName;
+    public SimpleStringProperty name;
+    public String createdAt;
+    public String updatedAt;
+
+    public Collection(String name, int publicher_id, String publisherName) {
+        this.collection_id = new SimpleIntegerProperty();
+        this.name = new SimpleStringProperty(name);
+        this.publicher_id = new SimpleIntegerProperty(publicher_id);
+        this.publicherName = new SimpleStringProperty(publisherName);
+    }
+
+    public String getPublicherName() {
+        return publicherName.get();
+    }
+
+    public SimpleStringProperty publicherNameProperty() {
+        return publicherName;
+    }
+
+    public void setPublicherName(String publicherName) {
+        this.publicherName.set(publicherName);
+    }
+
+    public int getCollection_id() {
+        return collection_id.get();
+    }
+
+    public SimpleIntegerProperty collection_idProperty() {
+        return collection_id;
+    }
+
+    public void setCollection_id(int collection_id) {
+        this.collection_id.set(collection_id);
+    }
+
+    public int getPublicher_id() {
+        return publicher_id.get();
+    }
+
+    public void setPublicher_id(int publicher_id) {
+        this.publicher_id.set(publicher_id);
+    }
+
+    public String getName() {
+        return name.get();
+    }
+
+    public SimpleStringProperty nameProperty() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name.set(name);
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+}
