@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: white;
+  margin: 0;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #444;
+  padding: 15px 30px;
+}
+
+.logo img {
+  width: 40px;
+}
+
+.navbar .logo {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+}
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  padding: 8px 15px;
+  background: #666;
+  border-radius: 5px;
+}
+.navbar a:hover {
+  background: #888;
+}
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  text-align: center;
+  background: linear-gradient(to right, #002d13, #004d1a, #002d13);
+  color: #fff;
+}
+
+h1,
+h2 {
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+.hero p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+.subscribe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  text-align: center;
+  background: linear-gradient(to right, #002d13, #004d1a, #002d13);
+  color: #fff;
+}
+.subscription-box {
+  background: rgba(0, 100, 50, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+.subscription-box h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.subscription-box p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.cta {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.cta a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+.cta a:hover {
+  text-decoration: underline;
+}
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 300px;
+}
+
+button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: grey;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 5px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
