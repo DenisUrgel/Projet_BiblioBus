@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" prefHeight="653.0" prefWidth="608.0" spacing="10.0" style="-fx-background-color: #319B8F;" stylesheets="@MyBootstrap.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.imie.projetbts.DetailsLivreController">
+   <children>
+      <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="480.0" spacing="20.0">
+         <children>
+            <Label text="Titre" />
+            <TextField fx:id="txtTitre" />
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="TOP_CENTER" prefHeight="30.0" prefWidth="608.0" spacing="20.0">
+         <children>
+            <Label text="Auteur" />
+            <ChoiceBox fx:id="choiceAuteur" prefWidth="150.0" />
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin></HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="240.0" prefHeight="30.0" prefWidth="608.0" spacing="10.0">
+         <children>
+            <Label text="Collection" />
+            <ChoiceBox fx:id="choiceCollection" prefWidth="150.0" />
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <Label text="Url de l'image" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <TextArea fx:id="urlImage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="190.0" prefWidth="293.0" />
+            <ImageView fx:id="image" fitHeight="191.0" fitWidth="244.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </HBox>
+      <Label text="Résumé" />
+      <TextArea fx:id="summaryArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="291.0" />
+      <HBox alignment="CENTER" prefHeight="54.0" prefWidth="608.0" spacing="20.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onDelete" styleClass="btn-danger" stylesheets="@MyBootstrap.css" text="Supprimer" />
+            <Button mnemonicParsing="false" onAction="#onModify" style="-fx-background-color: #0047FF; -fx-border-color: #0047FF;" styleClass="btn-danger" stylesheets="@MyBootstrap.css" text="Modifier" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets top="40.0" />
+   </padding>
+</VBox>

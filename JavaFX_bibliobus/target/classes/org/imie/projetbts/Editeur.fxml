@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane style="-fx-background-color: #319B8F;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.imie.projetbts.EditeurController">
+   <center>
+      <TableView fx:id="tablPublisher" onMousePressed="#onEditeurPressed" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="colIdEditeur" prefWidth="75.0" text="id" visible="false" />
+          <TableColumn fx:id="colNomEditeur" prefWidth="75.0" text="nom" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <BorderPane.margin>
+            <Insets bottom="10.0" />
+         </BorderPane.margin>
+      </TableView>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="62.0" prefWidth="394.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="112.0">
+               <children>
+                  <Label text="Nom" />
+                  <TextField fx:id="txtNomEditeur" onAction="#onEditeurNameChanged" />
+               </children>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="60.0" prefWidth="135.0">
+               <children>
+                  <Button fx:id="btnDelEditeur" mnemonicParsing="false" onAction="#onDelEditeur" style="-fx-background-color: #0047FF; -fx-border-color: #0047FF;" styleClass="btn-danger" text="Supprimer éditeur">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="btnAddEditeur" mnemonicParsing="false" onAction="#onAddEditeur" style="-fx-background-color: #0047FF; -fx-border-color: #0047FF;" styleClass="btn-danger" text="Ajouter éditeur">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" top="5.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</BorderPane>
