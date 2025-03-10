@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>title</title>
+
+    <link rel="stylesheet" href="/styles/app.css" />
+    
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="{{ asset('img/logo.png') }}"  alt="Logo BiblioBus" />
+      </div>
+        <a href="{{ path('app_register') }}">S'inscrire</a>
+        <a href="{{ path('app_seconnecter') }}">Se connecter</a>
+        <a href="{{ path('app_contact') }}">Contact</a>
+        <a href="{{ path('app_livres') }}">Liste des livres</a>
+    </nav>
+
+    <main>
+      <h1>Hello</h1>
+    </main>
+
+    <!-- <main>{% block content %}{% endblock %}</main> -->
+
+    
+  </body>
+</html>
